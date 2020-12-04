@@ -68,7 +68,7 @@
                
               </div>
               
-              <form method="post" action="/event">
+              <form method="get" action="/event">
               @csrf
               <div class="col-md-12">
                 <div class="form-group">
@@ -76,9 +76,9 @@
                        <select class="form-control curved-effect" id="hallname" name="hallname">
                         
                   <option  disabled selected hidden >Please choose Hall Name</option>
-                 <option>Sadananda Open Air Auditorium</option>
-                 <option>Sambhram Auditorium</option>
-                 <option >Shambhavi Auditorium</option>
+                 <option>Sadananda </option>
+                 <option>Sambhram</option>
+                 <option >Shambhavi</option>
                  <option>Phalguni Seminar Hall</option>
                  <option>Sowparnika Seminar Hall</option>
                 </select>

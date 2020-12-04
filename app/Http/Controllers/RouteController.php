@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\EventBook;
 use Illuminate\Http\Request;
 
 class RouteController extends Controller
@@ -15,9 +16,25 @@ class RouteController extends Controller
     {
         return view('bookings');
     }
-    public function getEvent()
+    public function getEvent(Request $req)
     {
-        return view('event');
+         
+        $eventBook =EventBook::where('hallname',$req->input('hallname'))
+       ->where('eventdate',$req->input('date'))
+        ->get();
+    //     $eventBook =EventBook::where('hallname','Phalguni Seminar Hall')
+    //    ->where('eventdate','2020-12-18')
+    //     ->get();
+        $i=0;
+        $sendEventBook=[];
+        foreach ($eventBook as $p) {
+            $sendEventBook[$i]=$p->timeslot;
+            $i++;
+
+          }
+         return view('event')->with('sendEventBook',$sendEventBook);
+        // return view('event',compact(sendEventBook));
+        // return view('event')->with('eventBook',$eventBook);
     }
    
 }

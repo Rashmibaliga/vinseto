@@ -14,7 +14,11 @@ class CreateEventBooksTable extends Migration
     public function up()
     {
         Schema::create('event_books', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('bookid');
+            $table->string('hallname');
+            $table->string('eventname');
+            $table->string('eventdate');
+            $table->string('timeslot');
             $table->timestamps();
         });
     }

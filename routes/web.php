@@ -25,4 +25,6 @@ Route::get('/event','RouteController@getEvent');
    // return view('home');
 //});
 Route::post('/event','RouteController@getEvent');
+Route::post('book','EventBookController@store');
+// Route::get('event', 'RouteController@getEvent')->name('event');
 

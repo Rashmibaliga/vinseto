@@ -33,9 +33,19 @@ class EventBookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $book = new EventBook;
+            $book ->hallname =$req ->input('hallname');
+            $book ->eventdate =$req ->input('eventdate');
+            $book ->eventname =$req ->input('eventname'); 
+               $arraytostring=implode(',', $req->input('timeslot'));
+              
+               $book ->timeslot=$arraytostring;
+            $book -> save();
+           
+            return redirect('/dashboard');
+           
     }
 
     /**
@@ -82,4 +92,4 @@ class EventBookController extends Controller
     {
         //
     }
-    
+}
