@@ -66,11 +66,11 @@
   <div class="form-group">
   <p>choose time slots</p>
   <div id="evdisable" >
-  <div class="checkbox">
+  <div class="checkbox-group" required>
       <input type="checkbox" id="0" name="timeslot[]"  value="0" >9:00 - 10:00 
     </div>
     <div class="checkbox">
-      <input type="checkbox" id="1" name="timeslot[]"  value="1">11:00 - 12:00
+      <input type="checkbox" id="1" name="timeslot[]"  value="1" >11:00 - 12:00
     </div>
     <div class="checkbox disabled">
       <input type="checkbox" id="2" name="timeslot[]" value="2" >1:00 - 2:00
@@ -131,12 +131,7 @@ for($k=0;$k<=$i;$k++,$i--)
 @endphp
 
   </main>
-   <script>
-
-
-
- 
-</script> 
+   
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -148,5 +143,16 @@ for($k=0;$k<=$i;$k++,$i--)
   <p class="float-right" style="padding-top: 40px;"><a href="#">Back to top</a></p>
   <p class="float-left" style="padding-top: 40px;">&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
+<script type="text/javascript">
+    $('#btnBook').click(function() {
+      console.log("reached")
+      checked = $("input[type=checkbox]:checked").length;
 
+      if(!checked) {
+        alert("You must check at least one checkbox.");
+        return false;
+      }
+
+    });
+  </script>
 </html>
