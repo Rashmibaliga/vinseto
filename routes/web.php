@@ -13,18 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home','HomeController@index');
+
+Route::get('/','HomeController@index');
 Route::get('/bookings','RouteController@getBookings');
 Route::get('/dashboard','RouteController@getDashboard');
-Route::get('/event','RouteController@getEvent');
+Route::get('/event','EventBookController@index');
 
 //Route::get('/home', function () {
    // return view('home');
 //});
-Route::post('/event','RouteController@getEvent');
+Route::post('/event','EventBookController@index');
 Route::post('book','EventBookController@store');
+
+Route::get('dashboard','RouteController@index');
 // Route::get('event', 'RouteController@getEvent')->name('event');
 

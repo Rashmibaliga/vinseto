@@ -12,9 +12,22 @@ class EventBookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $req)
     {
-        //
+        $eventBook =EventBook::where('hallname',$req->input('hallname'))
+        ->where('eventdate',$req->input('date'))
+         ->get();
+     //     $eventBook =EventBook::where('hallname','Phalguni Seminar Hall')
+     //    ->where('eventdate','2020-12-18')
+     //     ->get();
+         $i=0;
+         $sendEventBook=[];
+         foreach ($eventBook as $p) {
+             $sendEventBook[$i]=$p->timeslot;
+             $i++;
+ 
+           }
+          return view('event')->with('sendEventBook',$sendEventBook);
     }
 
     /**
@@ -39,12 +52,14 @@ class EventBookController extends Controller
             $book ->hallname =$req ->input('hallname');
             $book ->eventdate =$req ->input('eventdate');
             $book ->eventname =$req ->input('eventname'); 
+            $book ->name =$req ->input('name'); 
+            $book ->phoneno =$req ->input('phonenumber'); 
                $arraytostring=implode(',', $req->input('timeslot'));
               
                $book ->timeslot=$arraytostring;
             $book -> save();
            
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with('msg',"Booking done successfully!!!");
            
     }
 

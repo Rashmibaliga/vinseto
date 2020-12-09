@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>infrastructure</title>
+    <title>Event Page</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -34,11 +34,16 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/event.css') }}" rel="stylesheet">
+    
   </head>
   <body class="text-center" >
+  
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
+   
+  <header class="masthead mb-auto pb-5">
+  
     <div class="inner">
+    
       <h3 class="masthead-brand">Infrastructure</h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="/event">Event</a>
@@ -47,22 +52,53 @@
       </nav>
       </div>
       </header>
-      <div class="container">
+      <main role="main" class="inner cover">
+      <!-- <div class="container"> -->
+      <div id="booking" class="section">
+      <!-- <div class="section-center"> -->
+        <div class="container">
+          <div class="row">
+            <div class="booking-form">
+              
       <form method="post" id="sectionForm"action="book">
     {{@csrf_field()}} 
+    
+    <div class="col-md-12">
   <div class="form-group">
   
-    <label for="exampleFormControlInput1">Hall Name</label>
+   Hall Name
     <input type="text" name="hallname" class="form-control" id="exampleFormControlInput1" value="<?php echo $_GET['hallname']; ?>" >
   </div>
+    </div>
+    
+    <div class="col-md-12">
   <div class="form-group">
-    <label for="exampleFormControlInput1">event date</label>
+    Event date
     <input type="text" name="eventdate" class="form-control" id="exampleFormControlInput2" value="<?php echo $_GET['date']; ?>">
   </div>
+    </div>
+    
+  <div class="col-md-12">
   <div class="form-group">
-    <label for="exampleFormControlInput1">Event Name</label>
+   Event Name
     <input type="text" name="eventname" class="form-control" id="exampleFormControlInput3" value="<?php echo $_GET['eventname']; ?>">
   </div>
+    </div>
+ 
+    <div class="col-md-12">
+  <div class="form-group">
+   Name
+    <input type="text" name="name" class="form-control" id="exampleFormControlInput4" value="<?php echo $_GET['name']; ?>">
+  </div>
+    </div>
+    <div class="col-md-12">
+  <div class="form-group">
+    Phone number
+    <input type="text" name="phonenumber" class="form-control" id="exampleFormControlInput5" value="<?php echo $_GET['phonenumber']; ?>">
+  </div>
+    </div>
+    
+    <!-- <div class="col-md-12"> -->
   <div class="form-group">
   <p>choose time slots</p>
   <div id="evdisable" >
@@ -77,14 +113,23 @@
     </div>
     </div>
                       </div>
+    
+    
                       <div class="form-group">
-                      <button id="btnBook"  value="Submit"class="btn btn-primary btn-sm">book now</button>
+                      <button id="btnBook"  value="Submit"class="btn btn-primary btn-sm submit-btn">book now</button>
                       </div>
+  
    </form>
+    
     </div>
-    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+    </main>
+    
 
-  <main role="main" class="inner cover">
+ 
 
  
 
@@ -130,19 +175,15 @@ for($k=0;$k<=$i;$k++,$i--)
 
 @endphp
 
-  </main>
+<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
    
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-</body>
-<footer class="container">
-  
-  <p class="float-right" style="padding-top: 40px;"><a href="#">Back to top</a></p>
-  <p class="float-left" style="padding-top: 40px;">&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+
+
 <script type="text/javascript">
     $('#btnBook').click(function() {
       console.log("reached")
@@ -155,4 +196,10 @@ for($k=0;$k<=$i;$k++,$i--)
 
     });
   </script>
+  </body>
+  <footer class="container">
+  
+  <!-- <p class="float-right" style="padding-top: 40px;"><a href="#">Back to top</a></p> -->
+  <p class="float-left" style="padding-top: 100px;">&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
 </html>
