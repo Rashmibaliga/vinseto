@@ -34,7 +34,7 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/event.css') }}" rel="stylesheet">
-    
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
   <body class="text-center" >
   
@@ -44,7 +44,7 @@
   
     <div class="inner">
     
-      <h3 class="masthead-brand">Infrastructure</h3>
+      <h3 class="masthead-brand"><i class='fas fa-university' style='font-size:28px'></i> Visneto</h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="/event">Event</a>
         <a class="nav-link" href="/dashboard">Dashboard</a>
@@ -100,7 +100,7 @@
     
     <!-- <div class="col-md-12"> -->
   <div class="form-group">
-  <p>choose time slots</p>
+  <p>Choose time slots</p>
   <div id="evdisable" >
   <div class="checkbox-group" required>
       <input type="checkbox" id="0" name="timeslot[]"  value="0" >9:00 - 10:00 

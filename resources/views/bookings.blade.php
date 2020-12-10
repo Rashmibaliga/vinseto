@@ -35,6 +35,7 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/booking.css') }}" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
   <body class="text-center">
     
@@ -42,7 +43,7 @@
       
   <header class="masthead mb-auto pb-5 ">
     <div class="inner">
-      <h3 class="masthead-brand">Infrastructure</h3>
+      <h3 class="masthead-brand"><i class='fas fa-university' style='font-size:28px'></i> Visneto</h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link " href="/">Home</a>
         <a class="nav-link def active" href="/bookings" >bookings</a>

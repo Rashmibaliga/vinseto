@@ -26,11 +26,12 @@
     
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
   <body>
     <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand " href="#">Infrastructure</a>
+    <a class="navbar-brand " href="#"><i class='fas fa-university' style='font-size:24px'></i> Visneto</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
